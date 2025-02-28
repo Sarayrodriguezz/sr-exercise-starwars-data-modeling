@@ -29,6 +29,9 @@ class Post(Base):
     id = Column(Integer, primary_key = True)
     user_id = Column(Integer, ForeignKey('user.id'))
     user = relationship(User)
+    url_img = Column(String(250))
+    likes = Column(Integer, nullable=False)
+    description = Column(String(300), nullable=False)
 
 class Media(Base):
     __tablename__ = 'media'
